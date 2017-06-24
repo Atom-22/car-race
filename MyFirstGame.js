@@ -33,12 +33,10 @@ function drawFirstCar(x, y){
 
     //var loopTimer =  setTimeout(drawFirstCar(x, y), 50);
 
-    var loopTimer = setTimeout('drawFirstCar('+x+','+y+')',100);
+    var loopTimer = setTimeout('drawFirstCar('+x+','+y+')',50);
     //clearTimeout(loopTimer);
 
 }
-
-
 
 var imageObjSecondCar = new Image();
 
@@ -62,7 +60,3 @@ function drawSecondCar(x1, y1){
     x1 += Math.random()*10;
     var loopTimer = setTimeout('drawSecondCar('+x1+','+y1+')',50);
 }
-
-
-
-
