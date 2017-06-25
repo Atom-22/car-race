@@ -31,18 +31,16 @@ function clearContext(){
 }
 
 
-document.getElementById("redBut").addEventListener('click',function (){
+document.getElementById("redBut").addEventListener('click',drawAll);
 
-    function drawAll(){
-        clearContext();
-        drawCar(firstImage, imageY1);
-        drawCar(secondImage, imageY2);
-        requestAnimationFrame(drawAll);
-    }
-
+function drawAll(){
+    clearContext();
+    drawCar(firstImage, imageY1);
+    drawCar(secondImage, imageY2);
     requestAnimationFrame(drawAll);
-}  );
+}
 
+requestAnimationFrame(drawAll);
 
 function drawCar(carImage, carImagePosY){
   var now = Date.now(),
