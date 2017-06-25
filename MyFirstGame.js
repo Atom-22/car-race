@@ -30,19 +30,20 @@ function clearContext(){
    ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
 
+var startButton = document.getElementById("redBut");
 
-document.getElementById("redBut").addEventListener('click',function (){
+startButton.addEventListener('click', startButtonClickedHandler);
 
-    function drawAll(){
+function startButtonClickedHandler() {
+     requestAnimationFrame(drawAll);
+} 
+
+ function drawAll(){
         clearContext();
         drawCar(firstImage, imageY1);
         drawCar(secondImage, imageY2);
         requestAnimationFrame(drawAll);
     }
-
-    requestAnimationFrame(drawAll);
-}  );
-
 
 function drawCar(carImage, carImagePosY){
   var now = Date.now(),
@@ -53,3 +54,4 @@ function drawCar(carImage, carImagePosY){
 
     lastTimestamp = now;
 }
+
