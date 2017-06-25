@@ -4,34 +4,29 @@
 	box-sizing: border-box;
 }
 
-
 canvas{
-	border: 2px solid black;
-}
-
-
-#myCanvas1{
-	display: block;
+	border: 2px dotted black;
 }
 
 button{
-	width: 40px;
-	height: 40px;
+	width: 50px;
+	height: 50px;
 	border: none;
 	border-radius: 50%;
 	outline: none;
 	margin: 10px;
 	display: block;
-
 }
 
-#redBut{
-	background: red;
-
-}
-
-#greenBut{
+#startButton{
 	background: green;
+}
 
+#pouseButton{
+	background: orange;
+}
+
+#stopButton{
+	background: red;
 }
 
