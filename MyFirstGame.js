@@ -12,14 +12,16 @@ canvas.width = 700;
 canvas.height = 200;
 
 var firstImage = new Image();
-
 firstImage.onload = function () {
     drawCar(firstImage, imageY1);
 };
+
+
 var secondImage = new Image();
 secondImage.onload = function(){
    drawCar(secondImage, imageY2);
 };
+
 
 firstImage.src = firstCarImage;
 secondImage.src = secondCarImage;
@@ -28,14 +30,18 @@ function clearContext(){
    ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
 
-function drawAll(){
-    clearContext();
-    drawCar(firstImage, imageY1);
-    drawCar(secondImage, imageY2);
-    requestAnimationFrame(drawAll);
-}
 
-requestAnimationFrame(drawAll);
+document.getElementById("redBut").addEventListener('click',function (){
+
+    function drawAll(){
+        clearContext();
+        drawCar(firstImage, imageY1);
+        drawCar(secondImage, imageY2);
+        requestAnimationFrame(drawAll);
+    }
+
+    requestAnimationFrame(drawAll);
+}  );
 
 
 function drawCar(carImage, carImagePosY){
