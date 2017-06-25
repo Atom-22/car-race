@@ -12,6 +12,7 @@ canvas.width = 700;
 canvas.height = 200;
 
 var firstImage = new Image();
+
 firstImage.onload = function () {
     requestAnimationFrame(draw);
 };
@@ -41,17 +42,17 @@ function draw1() {
         timeDelta = (now - (lastTimestamp || now)) / 1000; // in seconds
     imageX += timeDelta + Math.random() * 2; // meaning: random px per second
 
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    //ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.drawImage(secondImage,imageX,imageY2,200,80);
 
     lastTimestamp = now;
     requestAnimationFrame(draw1);
 }
 
-function callTwoFunctions(){
-    draw();
-    draw1();
-}
+// function callTwoFunctions(){
+//     draw();
+//     draw1();
+// }
 
 
 //
