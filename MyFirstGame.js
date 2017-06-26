@@ -23,6 +23,7 @@ function clearContext(){
 var startButton = document.getElementById("startButton");
 var pauseButton = document.getElementById("pouseButton");
 var stopButton = document.getElementById("stopButton");
+const  audio  = document.getElementById('audio');
 
 startButton.addEventListener('click',startButtonClickedHandler);
 pauseButton.addEventListener('click',pauseCarAnimationHandler);
@@ -36,6 +37,7 @@ function startButtonClickedHandler() {
     startButton.textContent = 'Started';
     stopButton.textContent = 'Stop';
     pauseButton.textContent = 'Pause';
+    playAudio();
     requestAnimFrameId = requestAnimationFrame(drawAll);
 }
 
@@ -44,6 +46,7 @@ function pauseCarAnimationHandler() {
     pauseButton.textContent = 'Paused';
     startButton.textContent = 'Start';
     stopButton.textContent = 'Stop';
+    pauseAudio();
     if(requestAnimFrameId){
         cancelAnimationFrame(requestAnimFrameId);
     }
@@ -54,6 +57,7 @@ function stopCarAnimationHandler(){
     stopButton.textContent = 'Stopped';
     startButton.textContent = 'Start';
     pauseButton.textContent = 'Pause';
+    stopAudio();
     if(requestAnimFrameId !== undefined) {
         cancelAnimationFrame(requestAnimFrameId);
         imageX = 0;
@@ -81,4 +85,16 @@ function drawCar(carImage, carImagePosY){
     imageX += timeDelta + Math.random() * 2;                // meaning: random px per second
     ctx.drawImage(carImage, imageX, carImagePosY, 200, 80 );
     lastTimestamp = now;
+}
+
+function playAudio() {
+    audio.play();
+}
+
+function pauseAudio() {
+    audio.pause();
+}
+
+function stopAudio() {
+    audio.load();
 }
