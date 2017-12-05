@@ -4,10 +4,10 @@ var canvas = document.getElementById("myCanvas"),
     imageX = 0,
     imageY1 = 0;
 
-const firstCarImage = "http://img.clipartall.com/car-png-car-clipart-png-600_258.png";
+const firstCarImage = "https://cdn.pixabay.com/photo/2015/09/23/10/20/car-953357_960_720.png";
 
-canvas.width = 1000;
-canvas.height = 200;
+canvas.width = window.innerWidth;
+canvas.height = 80;
 
 var firstImage = new Image();
 firstImage.onload = function () {
@@ -24,15 +24,17 @@ var startButton = document.getElementById("startButton");
 var pauseButton = document.getElementById("pouseButton");
 var stopButton = document.getElementById("stopButton");
 const  audio  = document.getElementById('audio');
+var nightButton = document.getElementById('night');
 
 startButton.addEventListener('click',startButtonClickedHandler);
 pauseButton.addEventListener('click',pauseCarAnimationHandler);
 stopButton.addEventListener('click',stopCarAnimationHandler);
-//
+nightButton.addEventListener('click',doNight);
 
 var requestAnimFrameId;
 
 function startButtonClickedHandler() {
+    setTimeout(doNight(), 5000);
     startButton.disabled = true;
     startButton.textContent = 'Started';
     stopButton.textContent = 'Stop';
@@ -74,7 +76,7 @@ function stopCarAnimationHandler(){
        }
 
 function stopCarOnTheEnd() {
-    if (imageX >= 800) {
+    if (imageX >= window.innerWidth - 200) {
         stopCarAnimationHandler();
     }
 }
@@ -83,7 +85,7 @@ function drawCar(carImage, carImagePosY){
   var now = Date.now(),
         timeDelta = (now - (lastTimestamp || now)) / 1000;  // in seconds
     imageX += timeDelta + Math.random() * 2;                // meaning: random px per second
-    ctx.drawImage(carImage, imageX, carImagePosY, 200, 80 );
+    ctx.drawImage(carImage, imageX, carImagePosY, 200, 90 );
     lastTimestamp = now;
 }
 
@@ -98,3 +100,11 @@ function pauseAudio() {
 function stopAudio() {
     audio.load();
 }
+
+function doNight() {
+    pauseCarAnimationHandler();
+    ctx.fillStyle = "grey";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    // canvas.style.opacity = '0.3';
+}
+

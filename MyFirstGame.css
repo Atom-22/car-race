@@ -5,7 +5,9 @@
 }
 
 canvas{
-	border: 2px dotted black;
+	border: 1px solid black;
+	border-bottom: 15px solid #6F6E63;
+	border-top: none;
 }
 
 button{
