@@ -1,0 +1,19 @@
+{
+  "name": "car-race",
+  "version": "1.0.0",
+  "description": "test test for Atom Ulikhanyan!",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Atom-22/car-race.git"
+  },
+  "author": "Atom Ulikhanyan <atomulikhanyan@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Atom-22/car-race/issues"
+  },
+  "homepage": "https://github.com/Atom-22/car-race#readme"
+}
