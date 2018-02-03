@@ -4,7 +4,7 @@ var canvas = document.getElementById("myCanvas"),
     imageX = 0,
     imageY1 = 0;
 
-const firstCarImage = "https://cdn.pixabay.com/photo/2015/09/23/10/20/car-953357_960_720.png";
+const firstCarImage = "images/carIcon.png";
 
 canvas.width = window.innerWidth;
 canvas.height = 80;
